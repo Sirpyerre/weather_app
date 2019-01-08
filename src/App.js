@@ -1,4 +1,8 @@
 import React, {Component} from 'react';
+import Paper from "@material-ui/core/Paper";
+import AppBar from "@material-ui/core/AppBar";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
 import {Grid, Row, Col} from "react-flexbox-grid";
 import './App.css';
 import LocationList from "./components/LocationList";
@@ -20,38 +24,30 @@ class App extends Component {
 
     render() {
         return (
-                <MuiThemeProviderOld>
-                    <Grid>
-                        <Row>
-                            <h1>Grid System</h1>
-                        </Row>
-                        <Row>
-                            <h5>Las columnas se muestran en la misma fila mientras sumen 12</h5>
-                        </Row>
-                        <Row>
-                            <Col xs={12}>
-                                <div className='red'>MD</div>
-                            </Col>
-                            <Col xs={12}>
-                                <div className='green'>MD</div>
-                            </Col>
-                            <Col xs={12}>
-                                <div className='blue'>MD</div>
-                            </Col>
-                            <Col xs={12}>
-                                <div className='yellow'>MD</div>
-                            </Col>
-                        </Row>
-                    </Grid>
-                </MuiThemeProviderOld>
-        /* <div className="App">
-         <LocationList cities={cities}
-                       onSelectedLocation={this.handleSelectedLocation}>
-         </LocationList>
-     </div>*/
+            <Grid>
+                <Row>
+                    <AppBar position="sticky"><Toolbar>
+                        <Typography variant="title" color="inherit">
+                            Weather App
+                        </Typography>
+                    </Toolbar></AppBar>
+                </Row>
+                <Row>
+                    <Col xs={12} md={6}>
+                        <LocationList cities={cities}
+                                      onSelectedLocation={this.handleSelectedLocation}>
+                        </LocationList>
+                    </Col>
+                    <Col xs={12} md={6}>
+                        <Paper elevation={4}>
+                            <div className="details">details</div>
+                        </Paper>
+                    </Col>
+                </Row>
+            </Grid>
 
-    )
-        ;
+        )
+            ;
     }
 }
 
