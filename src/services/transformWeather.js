@@ -10,7 +10,7 @@ import {
 
 const getTemp = kelvin => {
     return Number(convert(kelvin).from('K').to('C').toFixed(0));
-}
+};
 
 const getWeatherState = weather => {
     const { id } = weather;
@@ -28,7 +28,7 @@ const getWeatherState = weather => {
     } else {
         return CLOUD;
     }
-}
+};
 
 const transformWeather = weather_data => {
     const { humidity, temp } = weather_data.main;
@@ -41,9 +41,9 @@ const transformWeather = weather_data => {
         temperature: temperature,
         weatherState,
         wind: `${speed} m/s`
-    }
+    };
 
     return data;
-}
+};
 
 export default transformWeather;
