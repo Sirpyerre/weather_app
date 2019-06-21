@@ -31,9 +31,7 @@ class App extends Component {
                 </Row>
                 <Row>
                     <Col xs={12} md={6}>
-                        <LocationListContainer cities={cities}
-                                               onSelectedLocation={this.handleSelectedLocation}>
-                        </LocationListContainer>
+                        <LocationListContainer cities={cities}/>
                     </Col>
                     <Col xs={12} md={6}>
                         <Paper elevation={4}>
